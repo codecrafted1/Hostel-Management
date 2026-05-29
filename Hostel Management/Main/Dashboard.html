@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HostelHub – Dashboard</title>
+  <link rel="stylesheet" href="./Main.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+ 
+  <header class="main-header">
+    <div class="logo">
+      <img src="./i2.png" alt="HostelHub Logo" />
+      <h1>HostelHub</h1>
+    </div>
+
+    <nav class="nav-buttons">
+      <button><i class="fa-solid fa-house"></i> Dashboard</button>
+      <button id="doc-btn"><i class="fa-solid fa-book"></i> Documentation</button>
+      <button><i class="fa-solid fa-circle-question"></i> Help</button>
+      <button><i class="fa-solid fa-comment"></i> Feedback</button>
+      <button><i class="fa-solid fa-right-to-bracket"></i> All Updates</button>
+    </nav>
+  </header>
+
+<section class="update-section">
+  <h2 class="update-title">Latest Updates</h2>
+  <div class="update-grid">
+    <div class="update-card" data-update="1">
+      <i class="fa-solid fa-bell"></i>
+      <h3>Maintenance Notice</h3>
+      <p>Electrical repair schedule updated.</p>
+    </div>
+
+    <div class="update-card" data-update="3">
+      <i class="fa-solid fa-utensils"></i>
+      <h3>Mess Menu Update</h3>
+      <p>New breakfast options added.</p>
+    </div>
+
+    <div class="update-card" data-update="4">
+      <i class="fa-solid fa-broom"></i>
+      <h3>Cleaning Drive</h3>
+      <p>Join the weekend cleaning initiative!</p>
+    </div>
+
+    <div class="update-card" data-update="5">
+      <i class="fa-solid fa-user-gear"></i>
+      <h3>Room Inspection</h3>
+      <p>Monthly inspection scheduled soon.</p>
+    </div>
+
+    <div class="update-card" data-update="6">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Security Alert</h3>
+      <p>Updated visitor policy effective today.</p>
+    </div>
+
+    <div class="update-card" data-update="7">
+      <i class="fa-solid fa-bus"></i>
+      <h3>Transport Update</h3>
+      <p>New shuttle timings introduced for Block C.</p>
+    </div>
+
+    <div class="update-card" data-update="9">
+      <i class="fa-solid fa-fire-extinguisher"></i>
+      <h3>Safety Drill</h3>
+      <p>Mock fire drill scheduled this Friday.</p>
+    </div>
+
+    <div class="update-card" data-update="10">
+      <i class="fa-solid fa-wifi"></i>
+      <h3>Wi-Fi Upgrade</h3>
+      <p>Faster connection rollout for hostel residents.</p>
+    </div>
+  </div>
+</section>
+
+ 
+<div class="update-overlay" id="updateOverlay">
+  <div class="update-popup">
+    <button class="close-update" id="closeUpdate">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <h1 id="updateTitle">Update Title</h1>
+    <p class="update-meta">
+      <span id="updateDate"></span> • From <span id="updateSender"></span>
+    </p>
+    <p id="updateMessage"></p>
+
+    <hr />
+
+  
+    <div class="update-form">
+      <h3>Modify or Add Message</h3>
+      <form id="updateForm">
+        <label for="role">I am:</label>
+        <select id="role" required>
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
+
+        <input type="text" id="newTitle" placeholder="Enter Updated Title" required />
+        <textarea id="newMessage" placeholder="Enter updated details..." required></textarea>
+
+        <button type="submit" class="submit-update">
+          <i class="fa-solid fa-pen-to-square"></i> Update Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="update-overlay" id="updateOverlay">
+  <div class="update-popup">
+    <button class="close-update" id="closeUpdate">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h1 id="updateTitle">Update Title</h1>
+    <p class="update-meta">
+      <span id="updateDate"></span> • From <span id="updateSender"></span>
+    </p>
+    <p id="updateMessage"></p>
+  </div>
+</div>
+
+
+<div class="all-updates-overlay" id="allUpdatesOverlay">
+  <div class="all-updates-card">
+    <button class="close-all" id="closeAllUpdates">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <h1><i class="fa-solid fa-bullhorn"></i> All Hostel Updates</h1>
+    <div class="all-updates-list" id="allUpdatesList">
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="documentation-overlay" id="documentationOverlay">
+    <div class="documentation-card">
+      <button class="close-doc" id="closeDoc"><i class="fa-solid fa-xmark"></i></button>
+      <h1>Hostel Documentation</h1>
+      <h2>🏠 Rules & Regulations</h2>
+      <ul>
+        <li>Gate closes at 10 PM daily</li>
+        <li>Visitors only allowed with approval</li>
+        <li>Keep your room tidy</li>
+        <li>Electric kettle and iron are now allowed</li>
+      </ul>
+
+      <h2>💰 Fees & Payments</h2>
+      <ul>
+        <li>Annual Hostel Fee: ₹51,000</li>
+        <li>Mess Fee: ₹8,000/month</li>
+        <li>Security Deposit: ₹9,000 (Refundable)</li>
+      </ul>
+
+      <h2>🕒 Timings</h2>
+      <ul>
+        li>Breakfast: 7:30-10:00 AM</li>
+            <li>Lunch: 12:00-3:00 PM</li>
+            <li>Snacks: 5:00-7:00 PM</li>
+            <li>Dinner: 8:30-10:30</li>
+      </ul>
+
+      <h2>📞 Contact</h2>
+      <p>For any inquiries, reach out to <strong>hostelhelp@hostelhub.com</strong> or visit the office between 9 AM – 5 PM.</p>
+    </div>
+  </div>
+
+<div class="help-overlay" id="helpOverlay">
+  <div class="help-card">
+    <button class="close-help" id="closeHelp"><i class="fa-solid fa-xmark"></i></button>
+    <h1><i class="fa-solid fa-circle-question"></i> Help Center</h1>
+
+    <div class="qa">
+      <h2>Q1: How do I register for HostelHub?</h2>
+      <p>Go to the Login section and click on “Register”. Fill in your student ID and basic details to create your account.</p>
+    </div>
+
+    <div class="qa">
+      <h2>Q2: How can I report a complaint?</h2>
+      <p>Click the “Complaints” card and fill in the form. Your issue will be directly sent to the hostel maintenance team.</p>
+    </div>
+
+    <div class="qa">
+      <h2>Q3: How do I change my mess menu preferences?</h2>
+      <p>Navigate to the “Meal Menu” section and choose the “Customize Menu” option.</p>
+    </div>
+
+    <div class="qa">
+      <h2>Q4: Who can I contact for urgent issues?</h2>
+      <p>You can reach out to the warden via <strong>warden@hostelhub.com</strong> or call the hostel help desk during working hours.</p>
+    </div>
+
+    <div class="qa">
+      <h2>Q5: How can I view hostel announcements?</h2>
+      <p>Announcements are regularly updated in the “Announcements” card or dashboard section.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="feedback-overlay" id="feedbackOverlay">
+  <div class="feedback-card">
+    <button class="close-feedback" id="closeFeedback">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h1><i class="fa-solid fa-comment-dots"></i> Feedback</h1>
+    <p>We value your opinion! Please share your feedback below.</p>
+
+    <form id="feedbackForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Your feedback..." required></textarea>
+
+      <label class="rating-label">Rate your experience</label>
+      <div class="stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+
+      <button type="submit" class="submit-feedback">
+        <i class="fa-solid fa-paper-plane"></i> Submit Feedback
+      </button>
+    </form>
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <a href="#">Dashboard</a>
+        <a href="#">Announcements</a>
+        <a href="#">Feedback</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <form class="footer-form">
+          <input type="email" placeholder="Your Email" required />
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  <script src="./Main.js"></script>
+</body>
+</html>
